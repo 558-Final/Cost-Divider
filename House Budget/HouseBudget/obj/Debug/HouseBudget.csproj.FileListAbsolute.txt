@@ -1,0 +1,18 @@
+E:\VSSpace\HouseBudget\HouseBudget\obj\Debug\ResolveAssemblyReference.cache
+E:\VSSpace\HouseBudget\HouseBudget\obj\Debug\HouseBudget.Form1.resources
+E:\VSSpace\HouseBudget\HouseBudget\obj\Debug\HouseBudget.Properties.Resources.resources
+E:\VSSpace\HouseBudget\HouseBudget\bin\Debug\HouseBudget.exe
+E:\VSSpace\HouseBudget\HouseBudget\bin\Debug\HouseBudget.pdb
+E:\VSSpace\HouseBudget\HouseBudget\obj\Debug\HouseBudget.exe
+E:\VSSpace\HouseBudget\HouseBudget\obj\Debug\HouseBudget.pdb
+E:\VSSpace\HouseBudget\HouseBudget\obj\Debug\ResGen.read.1.tlog
+E:\VSSpace\HouseBudget\HouseBudget\obj\Debug\ResGen.write.1.tlog
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\obj\Debug\HouseBudget.exe
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\obj\Debug\HouseBudget.pdb
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\bin\Debug\HouseBudget.exe
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\bin\Debug\HouseBudget.pdb
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\obj\Debug\ResolveAssemblyReference.cache
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\obj\Debug\HouseBudget.Properties.Resources.resources
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\obj\Debug\ResGen.read.1.tlog
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\obj\Debug\ResGen.write.1.tlog
+L:\User Folders\Colten\Desktop\HouseBudget\HouseBudget\obj\Debug\HouseBudget.Form1.resources

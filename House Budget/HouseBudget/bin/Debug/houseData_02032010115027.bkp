@@ -1,0 +1,22 @@
+<root>
+  <residents>
+    <resident name="Cle" />
+    <resident name="Alisa" />
+    <resident name="Colten" />
+    <resident name="Adinah" />
+  </residents>
+  <months>
+    <Jan2010>
+      <purchase paidBy="Adinah" date="01/26/2010" desc="QFC foods" amount="65.82" cat="Food" />
+      <purchase paidBy="Adinah" date="01/28/2010" desc="whole foods, peanute butter, vinagar, blue agave" amount="20.37" cat="Food" />
+      <purchase paidBy="Colten" date="01/31/2010" desc="power strips and tools for kitchen table" amount="23.08" cat="Misc" />
+    </Jan2010>
+    <Feb2010>
+      <purchase paidBy="Cle" date="02/01/2010" desc="Fred Meyer food run" amount="112.06" cat="Food" />
+      <purchase paidBy="Cle" date="02/03/2010" desc="albertsons w/ cheese" amount="10" cat="Food" />
+      <payment paidBy="Colten" paidTo="Cle" date="02/03/2010" amount="-119.21" />
+      <payment paidBy="Alisa" paidTo="Cle" date="02/03/2010" amount="-453.05" />
+      <payment paidBy="Colten" paidTo="Adinah" date="02/03/2010" amount="-49.97" />
+    </Feb2010>
+  </months>
+</root>

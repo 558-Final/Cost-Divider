@@ -1,0 +1,161 @@
+<root>
+  <residents>
+    <resident name="Cle" />
+    <resident name="Alisa" />
+    <resident name="Colten" />
+    <resident name="Adinah" />
+  </residents>
+  <months>
+    <Jan2010>
+      <purchase paidBy="Adinah" date="01/26/2010" desc="QFC foods" amount="65.82" cat="Food" />
+      <purchase paidBy="Adinah" date="01/28/2010" desc="whole foods, peanute butter, vinagar, blue agave" amount="20.37" cat="Food" />
+      <purchase paidBy="Colten" date="01/31/2010" desc="power strips and tools for kitchen table" amount="23.08" cat="Misc" />
+    </Jan2010>
+    <Feb2010>
+      <purchase paidBy="Cle" date="02/01/2010" desc="Fred Meyer food run" amount="112.06" cat="Food" />
+      <purchase paidBy="Cle" date="02/03/2010" desc="albertsons w/ cheese" amount="10" cat="Food" />
+      <payment paidBy="Colten" paidTo="Cle" date="02/03/2010" amount="-119.21" />
+      <payment paidBy="Alisa" paidTo="Cle" date="02/03/2010" amount="-453.05" />
+      <payment paidBy="Colten" paidTo="Adinah" date="02/03/2010" amount="-49.97" />
+      <payment paidBy="Alisa" paidTo="Cle" date="02/03/2010" amount="483.57" />
+      <payment paidBy="Alisa" paidTo="Adinah" date="02/03/2010" amount="21.55" />
+      <purchase paidBy="Cle" date="02/08/2010" desc="elec bill" amount="200" cat="Utilities" />
+      <payment paidBy="Colten" paidTo="Cle" date="02/08/2010" amount="3.50" />
+      <purchase paidBy="Alisa" date="02/08/2010" desc="fred myer food" amount="126.54" cat="Food" />
+      <purchase paidBy="Adinah" date="02/03/2010" desc="albertsons food" amount="21.91" cat="Food" />
+      <payment paidBy="Colten" paidTo="Cle" date="02/13/2010" amount="8.50" />
+      <purchase paidBy="Cle" date="02/13/2010" desc="albertsons basics" amount="10" cat="Food" />
+      <purchase paidBy="Cle" date="02/13/2010" desc="fred meyers week food" amount="100" cat="Food" />
+      <payment paidBy="Colten" paidTo="Cle" date="02/16/2010" amount="449.46" />
+      <purchase paidBy="Alisa" date="02/19/2010" desc="fredy meyer food" amount="99.52" cat="Food" />
+      <payment paidBy="Cle" paidTo="Colten" date="02/19/2010" amount="11.5" />
+      <payment paidBy="Colten" paidTo="Cle" date="02/20/2010" amount="8" />
+      <purchase paidBy="Adinah" date="02/09/2010" desc="co-op food" amount="10.58" cat="Food" />
+      <purchase paidBy="Alisa" date="02/09/2010" desc="albertsons food" amount="6.73" cat="Food" />
+      <purchase paidBy="Adinah" date="02/09/2010" desc="whole foods" amount="5.99" cat="Food" />
+      <purchase paidBy="Adinah" date="02/04/2010" desc="whole foods" amount="14.55" cat="Food" />
+      <purchase paidBy="Adinah" date="02/28/2010" desc="" amount="52.37" cat="Food" />
+    </Feb2010>
+    <Mar2010>
+      <purchase paidBy="Cle" date="03/01/2010" desc="rent" amount="1036" cat="Utilities" />
+      <payment paidBy="Adinah" paidTo="Cle" date="03/01/2010" amount="319.12" />
+      <payment paidBy="Adinah" paidTo="Alisa" date="03/01/2010" amount="3185" />
+      <payment paidBy="Alisa" paidTo="Adinah" date="03/01/2010" amount="3185" />
+      <payment paidBy="Adinah" paidTo="Alisa" date="03/01/2010" amount="31.85" />
+      <payment paidBy="Colten" paidTo="Adinah" date="03/01/2010" amount="92.10" />
+      <payment paidBy="Cle" paidTo="Colten" date="03/01/2010" amount="29.95" />
+      <purchase paidBy="Cle" date="03/02/2010" desc="electricity jan-feb" amount="186.51" cat="Utilities" />
+      <purchase paidBy="Colten" date="03/03/2010" desc="fred meyer food" amount="140.64" cat="Food" />
+      <payment paidBy="Alisa" paidTo="Cle" date="03/03/2010" amount="324.93" />
+      <purchase paidBy="Colten" date="03/10/2010" desc="albertsons food" amount="41.20" cat="Food" />
+      <purchase paidBy="Alisa" date="03/18/2010" desc="indian food boxes fred meyer" amount="19.00" cat="Food" />
+      <purchase paidBy="Alisa" date="03/16/2010" desc="glasses, curtain rods, curtains for living room" amount="39.97" cat="Misc" />
+      <purchase paidBy="Cle" date="03/16/2010" desc="farmers market foodz" amount="21" cat="Food" />
+      <purchase paidBy="Cle" date="03/19/2010" desc="fred meyer food" amount="183.23" cat="Food" />
+      <payment paidBy="Alisa" paidTo="Cle" date="03/28/2010" amount="259" />
+      <purchase paidBy="Cle" date="03/28/2010" desc="marrakesh" amount="100" cat="Food" />
+      <payment paidBy="Cle" paidTo="Colten" date="03/28/2010" amount="6.00" />
+      <purchase paidBy="Cle" date="03/29/2010" desc="feb-mar electricity" amount="133.54" cat="Utilities" />
+      <purchase paidBy="Adinah" date="03/22/2010" desc="qfc foods pecans, walnuts" amount="28.52" cat="Food" />
+      <purchase paidBy="Adinah" date="03/09/2010" desc="qfc seeds" amount="17.11" cat="Food" />
+      <purchase paidBy="Alisa" date="03/23/2010" desc="asian foods market" amount="19.74" cat="Food" />
+      <purchase paidBy="Alisa" date="03/23/2010" desc="bananas / milk" amount="5.95" cat="Food" />
+      <purchase paidBy="Cle" date="03/29/2010" desc="gas" amount="190.47" cat="Utilities" />
+      <payment paidBy="Adinah" paidTo="Cle" date="03/29/2010" amount="451.28" />
+      <payment paidBy="Adinah" paidTo="Alisa" date="03/29/2010" amount="9.76" />
+      <payment paidBy="Adinah" paidTo="Colten" date="03/29/2010" amount="34.06" />
+      <purchase paidBy="Adinah" date="03/28/2010" desc="qfc food" amount="9.91" cat="Food" />
+      <purchase paidBy="Adinah" date="03/23/2010" desc="albertsons food" amount="15.97" cat="Food" />
+    </Mar2010>
+    <Apr2010>
+      <purchase paidBy="Cle" date="04/04/2010" desc="april rent" amount="1036" cat="Utilities" />
+      <purchase paidBy="Cle" date="04/01/2010" desc="fred meyer " amount="142.97" cat="Food" />
+      <payment paidBy="Cle" paidTo="Alisa" date="04/01/2010" amount="20.36" />
+      <purchase paidBy="Cle" date="04/04/2010" desc="drano,carpet stuff, ant bait" amount="33.74" cat="Food" />
+      <purchase paidBy="Cle" date="04/09/2010" desc="pizza supplies / olive oil" amount="53.87" cat="Food" />
+      <purchase paidBy="Adinah" date="04/12/2010" desc="beaumont mkt" amount="5.24" cat="Food" />
+      <purchase paidBy="Colten" date="04/03/2010" desc="albertsons" amount="13.10" cat="Food" />
+      <purchase paidBy="Alisa" date="04/12/2010" desc="QFC foods" amount="104.59" cat="Food" />
+      <purchase paidBy="Colten" date="04/15/2010" desc="fred meyer butter and bagels" amount="6.78" cat="Food" />
+      <payment paidBy="Alisa" paidTo="Cle" date="04/18/2010" amount="446.75" />
+      <purchase paidBy="Cle" date="04/20/2010" desc="fred meyer food / albertsons tp" amount="51.45" cat="Food" />
+      <payment paidBy="Colten" paidTo="Cle" date="04/23/2010" amount="801" />
+      <payment paidBy="Cle" paidTo="Colten" date="04/22/2010" amount=".75" />
+      <payment paidBy="Colten" paidTo="Alisa" date="04/23/2010" amount="49.31" />
+      <purchase paidBy="Adinah" date="04/27/2010" desc="groceries through April" amount="50.89" cat="Food" />
+      <payment paidBy="Adinah" paidTo="Colten" date="04/27/2010" amount="315.47" />
+      <payment paidBy="Colten" paidTo="Adinah" date="04/27/2010" amount="315.47" />
+      <payment paidBy="Adinah" paidTo="Cle" date="04/27/2010" amount="315.47" />
+      <purchase paidBy="Cle" date="04/27/2010" desc="fred meyer food" amount="113" cat="Food" />
+      <purchase paidBy="Adinah" date="04/14/2010" desc="new seasons" amount="45.4" cat="Food" />
+    </Apr2010>
+    <May2010>
+      <purchase paidBy="Cle" date="05/05/2010" desc="may rent" amount="1036" cat="Utilities" />
+      <purchase paidBy="Cle" date="05/05/2010" desc="electricity" amount="83.45" cat="Utilities" />
+      <payment paidBy="Alisa" paidTo="Cle" date="05/12/2010" amount="260" />
+      <purchase paidBy="Cle" date="05/03/2010" desc="safeway food" amount="35.08" cat="Food" />
+      <purchase paidBy="Colten" date="05/07/2010" desc="albertsons eggs" amount="3.49" cat="Food" />
+      <purchase paidBy="Colten" date="05/04/2010" desc="red mill food" amount="62.43" cat="Food" />
+      <purchase paidBy="Adinah" date="05/11/2010" desc="new seasons" amount="88.08" cat="Food" />
+      <purchase paidBy="Cle" date="05/16/2010" desc="fred meyer food" amount="186.47" cat="Food" />
+      <payment paidBy="Colten" paidTo="Cle" date="05/19/2010" amount="259" />
+      <purchase paidBy="Cle" date="05/24/2010" desc="orzo salad stuff " amount="20" cat="Food" />
+      <purchase paidBy="Adinah" date="05/17/2010" desc="co-op grocery" amount="29.90" cat="Food" />
+      <purchase paidBy="Adinah" date="05/22/2010" desc="whole foods" amount="16.68" cat="Food" />
+      <purchase paidBy="Cle" date="05/25/2010" desc="fred meyer food" amount="143.29" cat="Food" />
+      <purchase paidBy="Cle" date="05/25/2010" desc="gas bill" amount="85.86" cat="Utilities" />
+      <payment paidBy="Colten" paidTo="Cle" date="05/25/2010" amount="50" />
+      <payment paidBy="Adinah" paidTo="Cle" date="05/25/2010" amount="374.31" />
+      <purchase paidBy="Colten" date="05/27/2010" desc="tea and coffee" amount="13.37" cat="Food" />
+      <purchase paidBy="Adinah" date="05/27/2010" desc="bob's red mill" amount="36.36" cat="Food" />
+    </May2010>
+    <Jun2010>
+      <purchase paidBy="Cle" date="06/05/2010" desc="june rent" amount="1036" cat="Utilities" />
+      <purchase paidBy="Cle" date="06/01/2010" desc="apr elec" amount="97.90" cat="Food" />
+      <payment paidBy="Cle" paidTo="Colten" date="06/05/2010" amount="115" />
+      <payment paidBy="Cle" paidTo="Colten" date="06/05/2010" amount="77" />
+      <purchase paidBy="Alisa" date="06/05/2010" desc="fred meyer food" amount="144.00" cat="Food" />
+      <payment paidBy="Alisa" paidTo="Cle" date="06/08/2010" amount="427.00" />
+      <payment paidBy="Cle" paidTo="Alisa" date="06/08/2010" amount="75" />
+      <payment paidBy="Colten" paidTo="Cle" date="06/13/2010" amount="600" />
+      <purchase paidBy="Alisa" date="06/14/2010" desc="Renters insurace for 4 months and initaion fee" amount="121.93" cat="Utilities" />
+      <payment paidBy="Alisa" paidTo="Cle" date="06/17/2010" amount="7.50" />
+      <purchase paidBy="Colten" date="06/10/2010" desc="dishwash soap, half half, butter" amount="17.77" cat="Food" />
+      <purchase paidBy="Colten" date="06/10/2010" desc="alfalfa seeds" amount="2.8" cat="Food" />
+      <purchase paidBy="Alisa" date="06/18/2010" desc="safeway food" amount="114.82" cat="Food" />
+      <purchase paidBy="Adinah" date="06/04/2010" desc="blueberries, bananas" amount="9.81" cat="Food" />
+      <payment paidBy="Cle" paidTo="Adinah" date="06/29/2010" amount="26" />
+      <purchase paidBy="Colten" date="06/23/2010" desc="soak food" amount="27" cat="Food" />
+      <payment paidBy="Adinah" paidTo="Cle" date="06/29/2010" amount="297.93" />
+      <payment paidBy="Alisa" paidTo="Cle" date="06/29/2010" amount="40" />
+      <payment paidBy="Cle" paidTo="Colten" date="06/29/2010" amount="40" />
+      <payment paidBy="Alisa" paidTo="Colten" date="06/29/2010" amount="40" />
+      <payment paidBy="Colten" paidTo="Alisa" date="06/29/2010" amount="80" />
+      <payment paidBy="Adinah" paidTo="Alisa" date="06/29/2010" amount="44.27" />
+      <purchase paidBy="Cle" date="06/30/2010" desc="winco foods" amount="193.59" cat="Food" />
+    </Jun2010>
+    <Jul2010>
+      <purchase paidBy="Cle" date="07/01/2010" desc="rent" amount="1036" cat="Utilities" />
+      <purchase paidBy="Cle" date="07/30/2010" desc="may elec" amount="90.20" cat="Utilities" />
+      <purchase paidBy="Alisa" date="07/07/2010" desc="NPS Burnnig man" amount="24.97" cat="Misc" />
+      <payment paidBy="Colten" paidTo="Alisa" date="07/07/2010" amount="20" />
+      <purchase paidBy="Cle" date="07/10/2010" desc="albertsons food, eggs cheese, avo, bell pep" amount="39.49" cat="Food" />
+      <payment paidBy="Alisa" paidTo="Cle" date="07/14/2010" amount="350.00" />
+      <purchase paidBy="Alisa" date="07/15/2010" desc="winco food" amount="92.16" cat="Food" />
+      <purchase paidBy="Alisa" date="07/15/2010" desc="fred myer" amount="24.99" cat="Food" />
+      <purchase paidBy="Colten" date="07/15/2010" desc="bobs red mill" amount="40.91" cat="Food" />
+      <payment paidBy="Colten" paidTo="Cle" date="07/20/2010" amount="445.80" />
+      <payment paidBy="Colten" paidTo="Alisa" date="07/20/2010" amount="30" />
+      <purchase paidBy="Colten" date="07/08/2010" desc="fred meyer food / flea powder" amount="39.15" cat="Food" />
+      <payment paidBy="Cle" paidTo="Colten" date="07/21/2010" amount="4.00" />
+      <purchase paidBy="Cle" date="07/23/2010" desc="cooler / fan" amount="39" cat="Misc" />
+      <purchase paidBy="Colten" date="07/23/2010" desc="bilge pump / heater core" amount="43" cat="Misc" />
+      <purchase paidBy="Cle" date="07/23/2010" desc="shade struc pipe / connectors" amount="67" cat="Misc" />
+      <purchase paidBy="Alisa" date="07/23/2010" desc="shade struc fabric" amount="4" cat="Misc" />
+      <purchase paidBy="Colten" date="07/23/2010" desc="12 volt socket" amount="12" cat="Misc" />
+    </Jul2010>
+    <Aug2010>
+      <purchase paidBy="Cle" date="08/01/2010" desc="rent" amount="1200" cat="Utilities" />
+    </Aug2010>
+  </months>
+</root>

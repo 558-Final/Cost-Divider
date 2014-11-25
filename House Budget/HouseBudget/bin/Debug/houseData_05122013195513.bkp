@@ -1,0 +1,14 @@
+<root>
+  <parties>
+    <party name="Colten an Adinah" count="2" />
+    <party name="Nate" count="1" />
+    <party name="Other guy" count="1" />
+  </parties>
+  <months>
+    <May2013>
+      <purchase paidBy="Colten an Adinah" date="05/12/2013" desc="Food" amount="15" cat="Food" enteredDate="05/12/2013 07:52 PM" />
+      <purchase paidBy="Nate" date="05/12/2013" desc="Food" amount="15" cat="Food" enteredDate="05/12/2013 07:52 PM" />
+      <purchase paidBy="Other guy" date="05/12/2013" desc="10asdf" amount="10" cat="Food" enteredDate="05/12/2013 07:54 PM" />
+    </May2013>
+  </months>
+</root>

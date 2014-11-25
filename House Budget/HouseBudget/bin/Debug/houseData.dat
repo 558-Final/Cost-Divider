@@ -1,0 +1,14 @@
+<root>
+  <parties>
+    <party name="Colten and Adinah" count="2" />
+    <party name="Annie" count="1" />
+    <party name="Jonathon" count="1" />
+  </parties>
+  <months>
+    <Jun2014>
+      <purchase paidBy="Colten and Adinah" date="06/23/2014" desc="Comcast" amount="100" cat="Utilities" enteredDate="06/23/2014 12:32 PM" />
+      <purchase paidBy="Annie" date="06/23/2014" desc="Trader Joes" amount="100" cat="Food" enteredDate="06/23/2014 12:33 PM" />
+      <payment paidBy="Colten and Adinah" paidTo="Annie" date="06/23/2014" amount="25" />
+    </Jun2014>
+  </months>
+</root>
