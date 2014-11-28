@@ -8,6 +8,7 @@
     <Nov2014>
       <purchase paidBy="Bill and Sue" date="11/28/2014" desc="Groceries" amount="100" cat="Food" enteredDate="11/28/2014 01:17 AM" />
       <purchase paidBy="Frank" date="11/28/2014" desc="Electric Bill" amount="80" cat="Food" enteredDate="11/28/2014 01:19 AM" />
+      <payment paidBy="John" paidTo="Frank" date="11/28/2014" amount="20" />
     </Nov2014>
   </months>
 </root>
