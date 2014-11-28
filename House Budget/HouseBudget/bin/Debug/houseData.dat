@@ -1,6 +1,13 @@
 <root>
   <parties>
+    <party name="John" count="1" />
+    <party name="Frank" count="1" />
+    <party name="Bill and Sue" count="2" />
   </parties>
   <months>
+    <Nov2014>
+      <purchase paidBy="Bill and Sue" date="11/28/2014" desc="Groceries" amount="100" cat="Food" enteredDate="11/28/2014 01:17 AM" />
+      <purchase paidBy="Frank" date="11/28/2014" desc="Electric Bill" amount="80" cat="Food" enteredDate="11/28/2014 01:19 AM" />
+    </Nov2014>
   </months>
 </root>
