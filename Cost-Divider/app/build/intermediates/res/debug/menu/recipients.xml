@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.burntime.cost_divider.RecipientsActivity" >
+    <item android:id="@+id/action_send"
+        android:title="@string/send"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:visible="false"/>
+</menu>
+<!-- From: file:/C:/Users/Colten/Dropbox/_SCHOOL/ECE%20558%20-%20Android%20Programming/Final_Project/Cost-Divider/Cost-Divider/app/src/main/res/menu/recipients.xml -->
