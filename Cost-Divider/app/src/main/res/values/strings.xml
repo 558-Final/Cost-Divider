@@ -39,5 +39,6 @@
     <string name="error_with_file">There was an error with this file. Please select another.</string>
     <string name="error_sending_message">There was an error sending your message. please try again.</string>
     <string name="title_activity_view_image">Ribbit</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -26,34 +26,19 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
     }
     public static final class id {
-        public static final int action_camera=0x7f09000e;
-        public static final int action_edit_friends=0x7f09000d;
-        public static final int action_logout=0x7f09000c;
-        public static final int action_send=0x7f09000f;
-        public static final int action_settings=0x7f090010;
-        public static final int emailField=0x7f090007;
-        public static final int imageView=0x7f090009;
-        public static final int loginButton=0x7f090002;
-        public static final int messageIcon=0x7f09000a;
-        public static final int pager=0x7f090004;
-        public static final int passwordField=0x7f090006;
-        public static final int passwordText=0x7f090001;
-        public static final int senderlabel=0x7f09000b;
-        public static final int signUpText=0x7f090003;
-        public static final int signupButton=0x7f090008;
-        public static final int userNameText=0x7f090000;
-        public static final int usernameField=0x7f090005;
+        public static final int action_new_payment=0x7f090004;
+        public static final int action_new_purchase=0x7f090003;
+        public static final int action_send=0x7f090005;
+        public static final int action_settings=0x7f090006;
+        public static final int pager=0x7f090000;
+        public static final int purchase_amount=0x7f090001;
+        public static final int purchaser=0x7f090002;
     }
     public static final class layout {
-        public static final int activity_edit_friends=0x7f030000;
-        public static final int activity_login=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_recipients=0x7f030003;
-        public static final int activity_sign_up=0x7f030004;
-        public static final int activity_view_image=0x7f030005;
-        public static final int fragment_friends=0x7f030006;
-        public static final int fragment_inbox=0x7f030007;
-        public static final int message_item=0x7f030008;
+        public static final int activity_main=0x7f030000;
+        public static final int fragment_friends=0x7f030001;
+        public static final int fragment_inbox=0x7f030002;
+        public static final int fragment_new_purchase=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -75,22 +60,23 @@ public final class R {
         public static final int error_with_file=0x7f06000b;
         public static final int file_too_large=0x7f06000c;
         public static final int general_error=0x7f06000d;
-        public static final int hello_world=0x7f06000e;
-        public static final int login_button_label=0x7f06000f;
-        public static final int logout_label=0x7f060010;
-        public static final int no_friends=0x7f060011;
-        public static final int password_hint=0x7f060012;
-        public static final int send=0x7f060013;
-        public static final int sign_up_label=0x7f060014;
-        public static final int title_activity_edit_friends=0x7f060015;
-        public static final int title_activity_login=0x7f060016;
-        public static final int title_activity_recipients=0x7f060017;
-        public static final int title_activity_sign_up=0x7f060018;
-        public static final int title_activity_view_image=0x7f060019;
-        public static final int title_section1=0x7f06001a;
-        public static final int title_section2=0x7f06001b;
-        public static final int username_hint=0x7f06001c;
-        public static final int video_size_warning=0x7f06001d;
+        public static final int hello_blank_fragment=0x7f06000e;
+        public static final int hello_world=0x7f06000f;
+        public static final int login_button_label=0x7f060010;
+        public static final int logout_label=0x7f060011;
+        public static final int no_friends=0x7f060012;
+        public static final int password_hint=0x7f060013;
+        public static final int send=0x7f060014;
+        public static final int sign_up_label=0x7f060015;
+        public static final int title_activity_edit_friends=0x7f060016;
+        public static final int title_activity_login=0x7f060017;
+        public static final int title_activity_recipients=0x7f060018;
+        public static final int title_activity_sign_up=0x7f060019;
+        public static final int title_activity_view_image=0x7f06001a;
+        public static final int title_section1=0x7f06001b;
+        public static final int title_section2=0x7f06001c;
+        public static final int username_hint=0x7f06001d;
+        public static final int video_size_warning=0x7f06001e;
     }
     public static final class style {
         /**  Customize your theme here. 

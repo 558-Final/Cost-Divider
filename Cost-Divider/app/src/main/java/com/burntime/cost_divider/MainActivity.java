@@ -1,32 +1,29 @@
 package com.burntime.cost_divider;
 
 import android.app.ActionBar;
-import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 import android.widget.Toast;
 
-import com.parse.ParseAnalytics;
-import com.parse.ParseUser;
+import com.burntime.cost_divider.not_needed.ParseConstants;
+import com.burntime.cost_divider.not_needed.RecipientsActivity;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Currency;
 import java.util.Locale;
 
 
@@ -36,21 +33,31 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     public static final int TAKE_PHOTO_REQUEST = 0;
     public static final int TAKE_VIDEO_REQUEST = 1;
-    public static final int PICK_PHOTO_REQUEST = 2;
-    public static final int PICK_VIDEO_REQUEST = 3;
+    // public static final int PICK_PHOTO_REQUEST = 2;
+    // public static final int PICK_VIDEO_REQUEST = 3;
 
-    public static final int MEDIA_TYPE_IMAGE = 4;
-    public static final int MEDIA_TYPE_VIDEO = 5;
+    // public static final int MEDIA_TYPE_IMAGE = 4;
+    // public static final int MEDIA_TYPE_VIDEO = 5;
 
-    public static final int FILE_SIZE_LIMIT = 10*(2^20);
+    // public static final int FILE_SIZE_LIMIT = 10*(2^20);
 
-    protected Uri mMediaUri;
+    // protected Uri mMediaUri;
+
+    public static NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());
+
+    private Household household;
+    private ArrayList<Party> parties;
+
+    private int sumOfParties = 0;
+    private double owes[][];
+
 
     /* TODO: This listener is for the menu option for taking picture or video.
       * convert to only having two options:
       * 1 - go to "new transaction" activity that returns a new transaction as the result.
       * 2 - go to "new payment" activity that returns a new payment as the result.
       * */
+   /*
     protected DialogInterface.OnClickListener mDialogListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
@@ -77,7 +84,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                         startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
                     }
                     break;
-/*                case 2: // Choose picture
+                case 2: // Choose picture
                     Intent choosePhotoIntent = new Intent(Intent.ACTION_GET_CONTENT);
                     choosePhotoIntent.setType("image*//*");
                     startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
@@ -88,11 +95,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     Toast.makeText(MainActivity.this, getString(R.string.video_size_warning), Toast.LENGTH_LONG).show();
                     startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
                     break;
-    */
+
             }
         }
     };
-
+                */
        /* private Uri getOutputMediaFileUri(int mediaType) {
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
                 String appName = MainActivity.this.getString(R.string.app_name);
@@ -194,11 +201,15 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     .setText(mSectionsPagerAdapter.getPageTitle(i))
                     .setTabListener(this));
         }
+
+
+        household = Household.get(this);
     }
 
 
+/*
 
-    //TODO: adapt this method to recieve a transaction or payment
+    //TODO: adapt this method to receive a transaction or payment
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -263,6 +274,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
         }
     }
+*/
 
    /* private void navToLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
@@ -279,8 +291,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         return true;
     }
 
-    // Shouldnt need a menu for this version
-/*    @Override
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -288,22 +300,22 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         int id = item.getItemId();
 
         switch(id){
-            case R.id.action_logout:
-                ParseUser.logOut();
-                navToLogin();
+            case R.id.action_new_purchase:
+                Fragment newPurchaseDialogFragment = new NewPurchaseFragment();
+                newPurchaseDialogFragment.show(getSupportFragmentManager(), "purchase");
                 break;
-            case R.id.action_edit_friends:
-                Intent intent = new Intent(this, EditFriendsActivity.class);
-                startActivity(intent);
+            case R.id.action_new_payment:
+                DialogFragment newPaymentDialogFragment = new NewPaymentFragment();
+                newPaymentDialogFragment.show(getSupportFragmentManager(), "payment");
                 break;
-            case R.id.action_camera:
+            /*case R.id.action_camera:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setItems(R.array.camera_choices, mDialogListener);
                 AlertDialog dialog = builder.create();
-                dialog.show();
+                dialog.show();*/
         }
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
     @Override
     public void onTabSelected(ActionBar.Tab tab,

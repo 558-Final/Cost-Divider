@@ -33,30 +33,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.burntime.cost_divider.LoginActivity"
+            android:name="com.burntime.cost_divider.not_needed.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.burntime.cost_divider.SignUpActivity"
+            android:name="com.burntime.cost_divider.not_needed.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:parentActivityName="com.burntime.cost_divider.LoginActivity"
+            android:parentActivityName="com.burntime.cost_divider.not_needed.LoginActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.burntime.cost_divider.EditFriendsActivity"
+            android:name="com.burntime.cost_divider.not_needed.EditFriendsActivity"
             android:label="@string/title_activity_edit_friends"
             android:parentActivityName="com.burntime.cost_divider.MainActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.burntime.cost_divider.RecipientsActivity"
+            android:name="com.burntime.cost_divider.not_needed.RecipientsActivity"
             android:label="@string/title_activity_recipients"
             android:parentActivityName="com.burntime.cost_divider.MainActivity" >
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.burntime.cost_divider.ViewImageActivity"
+            android:name="com.burntime.cost_divider.not_needed.ViewImageActivity"
             android:label="@string/title_activity_view_image"
             android:parentActivityName="com.burntime.cost_divider.MainActivity"
             android:screenOrientation="portrait" >

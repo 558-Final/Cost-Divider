@@ -1,0 +1,23 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.burntime.cost_divider.NewPurchaseFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/purchase_amount"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/purchaser"
+        android:layout_gravity="center" />
+
+</FrameLayout>
+<!-- From: file:/C:/Users/Colten/Dropbox/_SCHOOL/ECE%20558%20-%20Android%20Programming/Final_Project/Cost-Divider/Cost-Divider/app/src/main/res/layout/fragment_new_purchase.xml -->

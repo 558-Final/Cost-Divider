@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.burntime.cost_divider.not_needed.MessageAdapter;
+import com.burntime.cost_divider.not_needed.ParseConstants;
+import com.burntime.cost_divider.not_needed.ViewImageActivity;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;

@@ -27,30 +27,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".not_needed.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".not_needed.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:parentActivityName=".LoginActivity"
+            android:parentActivityName=".not_needed.LoginActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".EditFriendsActivity"
+            android:name=".not_needed.EditFriendsActivity"
             android:label="@string/title_activity_edit_friends"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".RecipientsActivity"
+            android:name=".not_needed.RecipientsActivity"
             android:label="@string/title_activity_recipients"
             android:parentActivityName=".MainActivity" >
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ViewImageActivity"
+            android:name=".not_needed.ViewImageActivity"
             android:label="@string/title_activity_view_image"
             android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity" >
