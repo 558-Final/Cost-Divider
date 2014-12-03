@@ -17,7 +17,12 @@ import com.parse.SignUpCallback;
 
 public class SignUpActivity extends Activity {
 
-    protected EditText mUsername;
+
+    /*TODO: Don't need this
+    * */
+
+
+     protected EditText mUsername;
     protected EditText mPassword;
     protected EditText mEmail;
     protected EditText mHousehold;

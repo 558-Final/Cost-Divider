@@ -15,7 +15,8 @@ import java.io.InputStream;
 
 public class FileHelper {
 
-    // TODO: This file likely won't be used. Leave it unchanged.
+    /*TODO: Don't need this
+    * */
 
 	public static final String TAG = FileHelper.class.getSimpleName();
 	

@@ -28,6 +28,9 @@ import java.util.List;
 
 public class RecipientsActivity extends ListActivity {
 
+    /*TODO: Don't need this
+    * */
+
     public static final String TAG = RecipientsActivity.class.getSimpleName();
 
     protected List<ParseUser> mFriends;

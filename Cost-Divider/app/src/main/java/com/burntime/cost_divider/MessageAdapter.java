@@ -17,6 +17,9 @@ import java.util.List;
  */
 public class MessageAdapter extends ArrayAdapter<ParseObject> {
 
+    /*TODO: Shouldn't need this. We will use simply String array adaptors and won't need anything fancy like this
+    * */
+
     protected Context mContext;
     protected List<ParseObject> mMessages;
 

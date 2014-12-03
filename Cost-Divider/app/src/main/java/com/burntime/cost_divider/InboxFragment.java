@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class InboxFragment extends ListFragment{
 
-    /*TODO: Convert this activity to "Payments" activity. Add "New payment" functionality.
+    /*TODO: Convert this fragment to "Payments" fragment.
     * */
 
     protected List<ParseObject> mMessages;

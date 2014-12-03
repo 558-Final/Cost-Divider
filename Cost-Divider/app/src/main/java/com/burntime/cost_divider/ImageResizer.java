@@ -6,7 +6,8 @@ import android.util.Pair;
 
 public class ImageResizer {
 
-    // TODO: This file likely won't be used. Leave it unchanged.
+    /*TODO: Don't need this
+    * */
 
 	/*
 	 * Call this static method to resize an image to a specified width and height.

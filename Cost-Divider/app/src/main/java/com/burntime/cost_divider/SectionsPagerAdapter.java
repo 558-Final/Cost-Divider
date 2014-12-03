@@ -13,7 +13,12 @@ import java.util.Locale;
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    protected Context mContext;
+
+    /*TODO: Update this to show the appropriate fragment. Need to add one to the switch and the count.
+    * */
+
+
+     protected Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
         super(fm);

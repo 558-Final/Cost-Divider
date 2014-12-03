@@ -47,21 +47,20 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     protected Uri mMediaUri;
 
     /* TODO: This listener is for the menu option for taking picture or video.
-      * Likely won't be used. no change for now.
-      *
-      * This may be where we want to make balance calculations.
+      * convert to only having two options:
+      * 1 - go to "new transaction" activity that returns a new transaction as the result.
+      * 2 - go to "new payment" activity that returns a new payment as the result.
       * */
     protected DialogInterface.OnClickListener mDialogListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
-            switch(i){
+            switch (i) {
                 case 0: // Take picture
                     Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
-                    if (mMediaUri == null){
+                    if (mMediaUri == null) {
                         Toast.makeText(MainActivity.this, getString(R.string.error_external_storage), Toast.LENGTH_LONG).show();
-                    }
-                    else {
+                    } else {
                         takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
                         startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
                     }
@@ -71,29 +70,30 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
                     if (mMediaUri == null) {
                         Toast.makeText(MainActivity.this, getString(R.string.error_external_storage), Toast.LENGTH_LONG).show();
-                    }
-                    else {
+                    } else {
                         videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
                         videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);
                         videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
                         startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
                     }
                     break;
-                case 2: // Choose picture
+/*                case 2: // Choose picture
                     Intent choosePhotoIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                    choosePhotoIntent.setType("image/*");
+                    choosePhotoIntent.setType("image*//*");
                     startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
                     break;
                 case 3: // Choose Video
                     Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                    chooseVideoIntent.setType("video/*");
+                    chooseVideoIntent.setType("video*//*");
                     Toast.makeText(MainActivity.this, getString(R.string.video_size_warning), Toast.LENGTH_LONG).show();
                     startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
                     break;
+    */
             }
         }
+    };
 
-        private Uri getOutputMediaFileUri(int mediaType) {
+       /* private Uri getOutputMediaFileUri(int mediaType) {
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
                 String appName = MainActivity.this.getString(R.string.app_name);
                 File mediaStorageDir = new File(
@@ -129,8 +129,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             }
 
         }
-    };
-
+    */
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -150,18 +149,18 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+        //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_main);
 
-        ParseAnalytics.trackAppOpened(getIntent());
+        //ParseAnalytics.trackAppOpened(getIntent());
 
-        ParseUser currentUser = ParseUser.getCurrentUser();
+        /*ParseUser currentUser = ParseUser.getCurrentUser();
         if(currentUser == null){
             navToLogin();
         }
         else {
             Log.i(TAG, currentUser.getUsername());
-        }
+        }*/
 
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -199,6 +198,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
 
 
+    //TODO: adapt this method to recieve a transaction or payment
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -264,12 +264,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         }
     }
 
-    private void navToLogin() {
+   /* private void navToLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-    }
+    }*/
 
 
     @Override
@@ -279,7 +279,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         return true;
     }
 
-    @Override
+    // Shouldnt need a menu for this version
+/*    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -302,7 +303,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 dialog.show();
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @Override
     public void onTabSelected(ActionBar.Tab tab,

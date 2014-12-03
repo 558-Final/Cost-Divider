@@ -18,7 +18,7 @@ import com.parse.ParseUser;
 
 public class LoginActivity extends Activity {
 
-    /*TODO: Verify this will work properly. No obvious changes now.
+    /*TODO: Don't need this
     * */
 
     protected TextView mSignUpTextView;

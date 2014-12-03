@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\pre-dexed\debug\picasso-2.3.4-91e4e6ad0a00688e9aab3889d573fae9208ac2a5.jar"
+        jar="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\libs\picasso-2.3.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3b646ddbdac8a33fc45b64564011da81d23e4635"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-667647a8b7e16072f1f875099deafe5164dfe793.jar"
+        jar="C:\Users\Colten\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\pre-dexed\debug\commons-io-2.4-adabe8ce3a7291cdce009a90ae48c6ffbd30b789.jar"
+        jar="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\libs\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad"/>
+    <item
+        dex="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-82e476e3406a9bfc2d3922f82cea8b5e1a8d019e.jar"
+        jar="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\picasso-2.3.4-f2ec01c532668779da4576199bc2a434703b8bfb.jar"
+        jar="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\libs\picasso-2.3.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3b646ddbdac8a33fc45b64564011da81d23e4635"/>
+    <item
+        dex="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-a4e1cde3aa810ca99d8159d51b07c77caf1f1402.jar"
+        jar="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\Parse-1.5.1-77dbe29805b199254a61625c95c1e953298dacc3.jar"
+        jar="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\libs\Parse-1.5.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3d645417e7780d44f32e29a3ec6b729b75aef26c"/>
+    <item
+        dex="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\pre-dexed\debug\classes-0d5c8f4ab5442f2c85f0c4669382379b0eb182f2.jar"
+        jar="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e128103d5281ddd26195a7f980b36d0d005a4e56"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-aada271b4d3aee39ed487fe89accd71b1230431b.jar"
+        jar="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="27bbd3982cdfe4468a9bf99c8c773734a9049e33"/>
+    <item
+        dex="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\pre-dexed\debug\Parse-1.5.1-2f80faaf75fee08f0bcc692a360d495f454ae7bf.jar"
+        jar="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\libs\Parse-1.5.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3d645417e7780d44f32e29a3ec6b729b75aef26c"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\classes-481b5cd53da40904c55c702e479ce12527b0d5bc.jar"
+        jar="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v13\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e128103d5281ddd26195a7f980b36d0d005a4e56"/>
+    <item
+        dex="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\pre-dexed\debug\classes-4c149157d120c944384bf61e2ac4280be046434d.jar"
+        jar="C:\Users\Colten\AndroidStudioProjects\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-dcd27ce1c71132b7369543d6d4986a52d9336883.jar"
+        jar="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\commons-io-2.4-6c98c16161309df6d9948cd0a8524bdb32a038f8.jar"
+        jar="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\libs\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad"/>
+    <item
+        dex="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\pre-dexed\debug\classes-b4dc49571f71ea386e7bb218f6b2ec11e3c7a220.jar"
+        jar="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Ribbit\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+
+</pre-dex-items>

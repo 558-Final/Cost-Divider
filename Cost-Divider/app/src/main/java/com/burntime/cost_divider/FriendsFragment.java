@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class FriendsFragment extends ListFragment{
 
-    /*TODO: convert this activity to "purchases" activity. Add "New purchase" functionality.
+   /*TODO: Convert this fragment to "Purchases" fragment.
     * */
 
     public static final String TAG = FriendsFragment.class.getSimpleName();

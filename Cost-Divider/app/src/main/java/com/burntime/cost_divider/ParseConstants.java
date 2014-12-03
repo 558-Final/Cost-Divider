@@ -4,7 +4,12 @@ package com.burntime.cost_divider;
  * Created by Colten on 8/21/2014.
  */
 public final class ParseConstants {
-    //Class names
+
+    /*TODO: Don't need this
+    * */
+
+
+     //Class names
     public static final String CLASS_MESSAGES = "Messages";
 
     //Field Names
