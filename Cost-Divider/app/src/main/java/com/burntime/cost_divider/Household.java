@@ -10,6 +10,7 @@ import com.burntime.cost_divider.Things.AbstractJSONThing;
 import com.burntime.cost_divider.Things.Party;
 import com.burntime.cost_divider.Things.Payment;
 import com.burntime.cost_divider.Things.Purchase;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -141,6 +142,7 @@ public class Household {
     }
 
     public void addPurchase(Purchase t){
+        Log.d("addPurchase", "Adding Purchase");
         mPurchases.add(t);
         recalcOwesForPurchase(t);
         savePurchases();
@@ -153,6 +155,7 @@ public class Household {
     }
 
     private void recalcOwesForPurchase(Purchase t) {
+        Log.d("recalcOwesForPurchase","Recalculating balances due to new purchase");
         int pPaidBy = -1;
         for( int i = 0; i < mParties.size(); i++)
         {

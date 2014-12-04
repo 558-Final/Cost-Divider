@@ -58,7 +58,7 @@ public class NewPurchaseFragment extends AbstractNewTransactionDialogFragment {
                         }
                         Household h = Household.get(getActivity());
                         h.addPurchase(new Purchase(amount, h.getParties()
-                                .get(mPaidBy.getSelectedItemPosition()).getName()));
+                                        .get(mPaidBy.getSelectedItemPosition()).getName()));
                         mListener.newTransaction();
                         d.dismiss();
                     }

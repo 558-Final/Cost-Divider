@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import java.text.NumberFormat;
 import java.util.Locale;
-
+import android.util.Log;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
@@ -135,10 +135,13 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     public void newTransaction() {
         refreshLists();
+
     }
 
     public void refreshLists(){
+        Log.d("refreshLists", "Household.get(getActivity()).getBalances() = " + household.getBalances() );
         for (int f = 0; f < mSectionsPagerAdapter.getCount(); f++){
+            Log.d("refreshLists", "refresing Frament " + f);
             mSectionsPagerAdapter.refreshFragment(f);
         }
     }
