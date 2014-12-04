@@ -39,7 +39,6 @@ public class Purchase {
     }
 
     public Purchase(JSONObject json) throws JSONException {
-        type = json.getString(JSON_TYPE);
         paidBy = json.getString(JSON_BY);
         amount = json.getDouble(JSON_AMOUNT);
     }

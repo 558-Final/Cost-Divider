@@ -32,38 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.burntime.cost_divider.not_needed.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.burntime.cost_divider.not_needed.SignUpActivity"
-            android:label="@string/title_activity_sign_up"
-            android:parentActivityName="com.burntime.cost_divider.not_needed.LoginActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.burntime.cost_divider.not_needed.EditFriendsActivity"
-            android:label="@string/title_activity_edit_friends"
-            android:parentActivityName="com.burntime.cost_divider.MainActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.burntime.cost_divider.not_needed.RecipientsActivity"
-            android:label="@string/title_activity_recipients"
-            android:parentActivityName="com.burntime.cost_divider.MainActivity" >
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.burntime.cost_divider.not_needed.ViewImageActivity"
-            android:label="@string/title_activity_view_image"
-            android:parentActivityName="com.burntime.cost_divider.MainActivity"
-            android:screenOrientation="portrait" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.burntime.ribbit.MainActivity" />
-        </activity>
     </application>
 
 </manifest>

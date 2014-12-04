@@ -45,13 +45,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     public static NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());
 
-    private Household household;
-    private ArrayList<Party> parties;
-
-    private int sumOfParties = 0;
-    private double owes[][];
-
-
     /* TODO: This listener is for the menu option for taking picture or video.
       * convert to only having two options:
       * 1 - go to "new transaction" activity that returns a new transaction as the result.
@@ -202,8 +195,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     .setTabListener(this));
         }
 
-
-        household = Household.get(this);
+        Household.get(this);
     }
 
 
@@ -308,11 +300,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 DialogFragment newPaymentDialogFragment = new NewPaymentFragment();
                 newPaymentDialogFragment.show(getSupportFragmentManager(), "payment");
                 break;
-            /*case R.id.action_camera:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setItems(R.array.camera_choices, mDialogListener);
-                AlertDialog dialog = builder.create();
-                dialog.show();*/
+            case R.id.action_clear_data:
+                Household.get(this).clearData();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

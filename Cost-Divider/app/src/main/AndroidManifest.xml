@@ -26,38 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".not_needed.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".not_needed.SignUpActivity"
-            android:label="@string/title_activity_sign_up"
-            android:parentActivityName=".not_needed.LoginActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".not_needed.EditFriendsActivity"
-            android:label="@string/title_activity_edit_friends"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".not_needed.RecipientsActivity"
-            android:label="@string/title_activity_recipients"
-            android:parentActivityName=".MainActivity" >
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".not_needed.ViewImageActivity"
-            android:label="@string/title_activity_view_image"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.burntime.ribbit.MainActivity" />
-        </activity>
     </application>
 
 </manifest>

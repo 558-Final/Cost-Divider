@@ -13,7 +13,20 @@
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/purchaser"
+        android:id="@+id/payer"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/payee_label"
+        android:id="@+id/payee_label"
+        android:layout_gravity="center" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/payee"
         android:layout_gravity="center" />
 
     <LinearLayout

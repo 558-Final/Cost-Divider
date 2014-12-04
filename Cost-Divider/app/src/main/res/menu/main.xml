@@ -5,4 +5,6 @@
      android:title="New Purchase"/>
     <item android:id="@+id/action_new_payment"
         android:title="New Payment" />
+    <item android:id="@+id/action_clear_data"
+        android:title="Clear Data" />
 </menu>

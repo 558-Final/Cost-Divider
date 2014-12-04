@@ -16,19 +16,15 @@ import java.util.ArrayList;
 public class NewPurchaseFragment extends DialogFragment {
     private Spinner mPaidBy;
     private EditText mAmount;
-    private ArrayList<String> partyNames;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View layout = inflater.inflate(R.layout.new_purchase_dialog, null);
+        View layout = inflater.inflate(R.layout.new_purchase_dialog,null);
 
-        partyNames = new ArrayList<String>();
-        for (Party p : Household.get(getActivity()).getParties()) {
-            partyNames.add(p.toString());
-        }
         ArrayAdapter<Party> adapter = new ArrayAdapter<Party>(getActivity(),
                 android.R.layout.simple_list_item_1, Household.get(getActivity()).getParties());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         mAmount = (EditText) layout.findViewById(R.id.purchase_amount);
         mPaidBy = (Spinner) layout.findViewById(R.id.purchaser);
@@ -42,11 +38,11 @@ public class NewPurchaseFragment extends DialogFragment {
                     Household.get(getActivity()).addPurchase(
                             new Purchase(
                                     Double.parseDouble(mAmount.getText().toString()),
-                                    partyNames.get(mPaidBy.getSelectedItemPosition())));
+                                    Household.get(getActivity()).getParties()
+                                            .get(mPaidBy.getSelectedItemPosition()).getName()));
                 }
             });
 
         return b.create();
     }
-
 }

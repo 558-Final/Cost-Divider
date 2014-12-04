@@ -38,10 +38,15 @@
     <string name="send">Send</string>
     <string name="error_with_file">There was an error with this file. Please select another.</string>
     <string name="error_sending_message">There was an error sending your message. please try again.</string>
-    <string name="title_activity_view_image">Ribbit</string>
+    <string name="title_activity_view_image"></string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_payments_label">No payments.</string>
     <string name="title_purchases">Purchases</string>
     <string name="title_payments">Payments</string>
+    <string name="purchase_amount_label">Amount:</string>
+    <string name="purchaser_label">Purchaser:</string>
+    <string name="payee_label">Recipient</string>
+    <string name="empty_balances_label">Nothing to show.</string>
+    <string name="title_balances">Balances</string>
 
 </resources>

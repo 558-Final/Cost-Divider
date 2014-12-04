@@ -24,6 +24,7 @@
     <string name="camera_label">Camera</string>
     <string name="edit_friends_label">Edit Friends</string>
     <string name="email_hint">Email</string>
+    <string name="empty_balances_label">Nothing to show.</string>
     <string name="empty_creds_err_msg">One or more fields are empty.</string>
     <string name="empty_inbox_label">No new messages</string>
     <string name="err_title">Well Shit.</string>
@@ -40,13 +41,17 @@
     <string name="no_friends">You have no friends :(</string>
     <string name="no_payments_label">No payments.</string>
     <string name="password_hint">Password</string>
+    <string name="payee_label">Recipient</string>
+    <string name="purchase_amount_label">Amount:</string>
+    <string name="purchaser_label">Purchaser:</string>
     <string name="send">Send</string>
     <string name="sign_up_label">Sign up!</string>
     <string name="title_activity_edit_friends">Edit Friends</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_recipients">Choose Friends</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
-    <string name="title_activity_view_image">Ribbit</string>
+    <string name="title_activity_view_image"></string>
+    <string name="title_balances">Balances</string>
     <string name="title_payments">Payments</string>
     <string name="title_purchases">Purchases</string>
     <string name="title_section1">Inbox</string>

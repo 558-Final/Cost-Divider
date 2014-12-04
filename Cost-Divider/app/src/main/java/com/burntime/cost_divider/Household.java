@@ -1,8 +1,10 @@
 package com.burntime.cost_divider;
 
+import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -13,8 +15,8 @@ import java.util.Locale;
  */
 public class Household {
     private static final String TAG = "TransList";
-    private static final String PURCHASES_FN = "payments.json";
-    private static final String PAYMENTS_FN = "purchases.json";
+    private static final String PURCHASES_FN = "purchases.json";
+    private static final String PAYMENTS_FN = "payments.json";
 
     private ArrayList<Payment> mPayments;
     private ArrayList<Purchase> mPurchases;
@@ -33,6 +35,18 @@ public class Household {
         mPayments = new ArrayList<Payment>();
         mPurchases = new ArrayList<Purchase>();
         mParties = new ArrayList<Party>();
+
+        addParties();
+
+        owes = new double[mParties.size()][mParties.size()];
+        // Calculate the sum of all party members
+        for (Party p : mParties){
+            sumOfParties += p.getCount();
+        }
+
+
+        mPurchaseSerializer = new PurchaseJSONSerializer(mAppContext, PURCHASES_FN);
+        mPaymentSerializer = new PaymentJSONSerializer(mAppContext, PAYMENTS_FN);
         try {
             mPayments = mPaymentSerializer.loadTrans();
             for(Payment p : mPayments)
@@ -55,13 +69,7 @@ public class Household {
         }
 
 
-        addParties();
 
-        owes = new double[mParties.size()][mParties.size()];
-        // Calculate the sum of all party members
-        for (Party p : mParties){
-            sumOfParties = p.getCount();
-        }
     }
 
     private void addParties() {
@@ -97,7 +105,7 @@ public class Household {
                 if (i != j)
                 {
                     amtOwed = owes[j][i] - owes[i][j];
-                    if (amtOwed > 0)
+                    if (amtOwed > 0.1)
                     {
                         balances.add(mParties.get(i).getName() + " owes " + mParties.get(j).getName() + " " + MainActivity.currencyFormatter.format(amtOwed));
                     }
@@ -121,7 +129,7 @@ public class Household {
         int pPaidBy = -1;
         for( int i = 0; i < mParties.size(); i++)
         {
-            if (t.getPaidBy() == mParties.get(i).getName()){
+            if (t.getPaidBy().equals(mParties.get(i).getName())){
                 pPaidBy = i;
                 break;
             }
@@ -138,10 +146,10 @@ public class Household {
         int pPaidTo = -1;
         for( int i = 0; i < mParties.size(); i++)
         {
-            if (t.getPaidFrom() == mParties.get(i).getName()){
+            if (t.getPaidFrom().equals(mParties.get(i).getName())){
                 pPaidFrom = i;
             }
-            if (t.getPaidTo() == mParties.get(i).getName()){
+            if (t.getPaidTo().equals(mParties.get(i).getName())){
                 pPaidTo = i;
             }
         }
@@ -149,7 +157,6 @@ public class Household {
     }
 
     public void addPayment(Payment t){
-        recalcOwesForPayment(t);
         mPayments.add(t);
         savePayments();
     }
@@ -176,5 +183,12 @@ public class Household {
         }
     }
 
-
+    public void clearData() {
+        mPurchases.clear();
+        mPayments.clear();
+        savePayments();
+        savePurchases();
+        //File payments = new File(mAppContext.getFilesDir(), PAYMENTS_FN);
+        //payments.delete();
+    }
 }
