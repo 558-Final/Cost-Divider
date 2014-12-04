@@ -4,18 +4,22 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.burntime.cost_divider.Things.Party;
+import com.burntime.cost_divider.Things.Purchase;
 
-public class NewPurchaseFragment extends DialogFragment {
+public class NewPurchaseFragment extends AbstractNewTransactionDialogFragment {
     private Spinner mPaidBy;
     private EditText mAmount;
+
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -30,19 +34,37 @@ public class NewPurchaseFragment extends DialogFragment {
         mPaidBy = (Spinner) layout.findViewById(R.id.purchaser);
         mPaidBy.setAdapter(adapter);
 
-        AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
-           b.setView(layout)
-            .setPositiveButton("Save", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Household.get(getActivity()).addPurchase(
-                            new Purchase(
-                                    Double.parseDouble(mAmount.getText().toString()),
-                                    Household.get(getActivity()).getParties()
-                                            .get(mPaidBy.getSelectedItemPosition()).getName()));
-                }
-            });
+        final AlertDialog d = new AlertDialog.Builder(getActivity())
+            .setView(layout)
+            .setTitle("Add New Purchase")
+            .setCancelable(true)
+            .setNegativeButton("Cancel",null)
+            .setPositiveButton("Save", null)
+            .create();
 
-        return b.create();
+        d.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+                Button b = d.getButton(AlertDialog.BUTTON_POSITIVE);
+                b.setOnClickListener( new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        double amount;
+                        try {
+                            amount = Double.parseDouble(mAmount.getText().toString());
+                        } catch (Exception e){
+                            Toast.makeText(getActivity(), getString(R.string.no_amount_toast), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        Household h = Household.get(getActivity());
+                        h.addPurchase(new Purchase(amount, h.getParties()
+                                .get(mPaidBy.getSelectedItemPosition()).getName()));
+                        mListener.newTransaction();
+                        d.dismiss();
+                    }
+                });
+            }
+        });
+        return d;
     }
 }

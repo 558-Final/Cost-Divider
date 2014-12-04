@@ -1,20 +1,13 @@
 package com.burntime.cost_divider;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.burntime.cost_divider.not_needed.ParseConstants;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
-import com.parse.ParseRelation;
-import com.parse.ParseUser;
+import com.burntime.cost_divider.Things.Purchase;
 
 import java.util.List;
 
@@ -24,6 +17,7 @@ import java.util.List;
 public class PurchasesFragment extends ListFragment{
 
     protected List<Purchase> mPurchases;
+    protected ArrayAdapter<Purchase> mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,7 +30,12 @@ public class PurchasesFragment extends ListFragment{
     public void onResume() {
         super.onResume();
         mPurchases = Household.get(getActivity()).getPurchases();
-        ArrayAdapter<Purchase> adapter = new ArrayAdapter<Purchase>(getActivity(), android.R.layout.simple_list_item_1, mPurchases);
-        setListAdapter(adapter);
+        mAdapter = new ArrayAdapter<Purchase>(getActivity(), android.R.layout.simple_list_item_1, mPurchases);
+        setListAdapter(mAdapter);
+    }
+
+    public void refresh() {
+        mPurchases = Household.get(getActivity()).getPurchases();
+        mAdapter.notifyDataSetChanged();
     }
 }

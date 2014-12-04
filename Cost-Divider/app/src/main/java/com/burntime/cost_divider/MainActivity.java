@@ -1,166 +1,35 @@
 package com.burntime.cost_divider;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
-
-import com.burntime.cost_divider.not_needed.ParseConstants;
-// import com.burntime.cost_divider.not_needed.RecipientsActivity;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Currency;
 import java.util.Locale;
 
 
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener{
+
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
+        AbstractNewTransactionDialogFragment.NewTransactionDialogListener{
 
     public final static String TAG = MainActivity.class.getSimpleName();
 
-    public static final int TAKE_PHOTO_REQUEST = 0;
-    public static final int TAKE_VIDEO_REQUEST = 1;
-    // public static final int PICK_PHOTO_REQUEST = 2;
-    // public static final int PICK_VIDEO_REQUEST = 3;
-
-    // public static final int MEDIA_TYPE_IMAGE = 4;
-    // public static final int MEDIA_TYPE_VIDEO = 5;
-
-    // public static final int FILE_SIZE_LIMIT = 10*(2^20);
-
-    // protected Uri mMediaUri;
-
     public static NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(Locale.getDefault());
 
-    /* TODO: This listener is for the menu option for taking picture or video.
-      * convert to only having two options:
-      * 1 - go to "new transaction" activity that returns a new transaction as the result.
-      * 2 - go to "new payment" activity that returns a new payment as the result.
-      * */
-   /*
-    protected DialogInterface.OnClickListener mDialogListener = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialogInterface, int i) {
-            switch (i) {
-                case 0: // Take picture
-                    Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
-                    if (mMediaUri == null) {
-                        Toast.makeText(MainActivity.this, getString(R.string.error_external_storage), Toast.LENGTH_LONG).show();
-                    } else {
-                        takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
-                        startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
-                    }
-                    break;
-                case 1: // Take Video
-                    Intent videoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-                    mMediaUri = getOutputMediaFileUri(MEDIA_TYPE_VIDEO);
-                    if (mMediaUri == null) {
-                        Toast.makeText(MainActivity.this, getString(R.string.error_external_storage), Toast.LENGTH_LONG).show();
-                    } else {
-                        videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
-                        videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);
-                        videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
-                        startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
-                    }
-                    break;
-                case 2: // Choose picture
-                    Intent choosePhotoIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                    choosePhotoIntent.setType("image*//*");
-                    startActivityForResult(choosePhotoIntent, PICK_PHOTO_REQUEST);
-                    break;
-                case 3: // Choose Video
-                    Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                    chooseVideoIntent.setType("video*//*");
-                    Toast.makeText(MainActivity.this, getString(R.string.video_size_warning), Toast.LENGTH_LONG).show();
-                    startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
-                    break;
-
-            }
-        }
-    };
-                */
-       /* private Uri getOutputMediaFileUri(int mediaType) {
-            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-                String appName = MainActivity.this.getString(R.string.app_name);
-                File mediaStorageDir = new File(
-                        Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-                       appName);
-
-                if(!mediaStorageDir.exists()){
-                    if(!mediaStorageDir.mkdirs()){
-                        Log.e(TAG, "Failed to create directory.");
-                        return null;
-                    }
-                }
-
-                File mediaFile;
-                Date now = new Date();
-                String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(now);
-                String path = mediaStorageDir.getPath() + File.separator;
-                if(mediaType == MEDIA_TYPE_IMAGE){
-                    mediaFile = new File(path + "IMG_" + timestamp + ".jpg");
-                }
-                else if(mediaType == MEDIA_TYPE_VIDEO){
-                    mediaFile = new File(path + "IMG_" + timestamp + ".jpg");
-                }
-                else {
-                    return null;
-                }
-
-                Log.d(TAG, "File: " + Uri.fromFile(mediaFile));
-                return Uri.fromFile(mediaFile);
-
-            } else {
-                return null;
-            }
-
-        }
-    */
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v13.app.FragmentStatePagerAdapter}.
-     */
     SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     ViewPager mViewPager;
+    private Household household;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_main);
-
-        //ParseAnalytics.trackAppOpened(getIntent());
-
-        /*ParseUser currentUser = ParseUser.getCurrentUser();
-        if(currentUser == null){
-            navToLogin();
-        }
-        else {
-            Log.i(TAG, currentUser.getUsername());
-        }*/
 
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -195,86 +64,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                     .setTabListener(this));
         }
 
-        Household.get(this);
+        household = Household.get(this);
     }
-
-
-/*
-
-    //TODO: adapt this method to receive a transaction or payment
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_OK){
-            // Add to gallery
-
-            if(requestCode == PICK_PHOTO_REQUEST || requestCode == PICK_VIDEO_REQUEST){
-                if(data == null){
-                    Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
-                }
-                else{
-                    mMediaUri = data.getData();
-                }
-
-                Log.i(TAG, "Media URI: " + mMediaUri);
-                if(requestCode == PICK_VIDEO_REQUEST){
-                    // make sure the file is less than 10 MB
-                    int fileSize = 0;
-
-                    InputStream inputStream = null;
-                    try {
-                        inputStream = getContentResolver().openInputStream(mMediaUri);
-                        fileSize = inputStream.available();
-                    } catch (FileNotFoundException e) {
-                        Toast.makeText(this, getString(R.string.error_opening_file), Toast.LENGTH_LONG).show();
-                        return;
-                    } catch (IOException e) {
-                        Toast.makeText(this, getString(R.string.error_opening_file), Toast.LENGTH_LONG).show();
-                        return;
-                    }
-                    finally {
-                        try {
-                            inputStream.close();
-                        } catch (IOException e) { }
-                    }
-
-                    if(fileSize >= FILE_SIZE_LIMIT){
-                        Toast.makeText(this, getString(R.string.file_too_large), Toast.LENGTH_LONG).show();
-                        return;
-                    }
-                }
-            }
-            else{
-                Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                mediaScanIntent.setData(mMediaUri);
-                sendBroadcast(mediaScanIntent);
-            }
-
-            Intent recipientsIntent = new Intent(this, RecipientsActivity.class);
-            recipientsIntent.setData(mMediaUri);
-            String fileType;
-            if(requestCode == PICK_PHOTO_REQUEST || requestCode == TAKE_PHOTO_REQUEST){
-                fileType = ParseConstants.TYPE_IMAGE;
-            }
-            else{
-                fileType = ParseConstants.TYPE_VIDEO;
-            }
-            recipientsIntent.putExtra(ParseConstants.KEY_FILE_TYPE, fileType);
-            startActivity(recipientsIntent);
-        }
-        else if (resultCode == RESULT_CANCELED){
-            Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
-        }
-    }
-*/
-
-   /* private void navToLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }*/
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -282,7 +73,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -293,15 +83,32 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         switch(id){
             case R.id.action_new_purchase:
-                DialogFragment newPurchaseDialogFragment = new NewPurchaseFragment();
-                newPurchaseDialogFragment.show(getSupportFragmentManager(), "purchase");
+                NewPurchaseFragment newPurchaseDialogFragment = new NewPurchaseFragment();
+                newPurchaseDialogFragment.show(getFragmentManager(), "purchase");
                 break;
             case R.id.action_new_payment:
-                DialogFragment newPaymentDialogFragment = new NewPaymentFragment();
-                newPaymentDialogFragment.show(getSupportFragmentManager(), "payment");
+                NewPaymentFragment newPaymentDialogFragment = new NewPaymentFragment();
+                newPaymentDialogFragment.show(getFragmentManager(), "payment");
+                break;
+            case R.id.action_new_party:
+                NewPartyFragment newPartyDialogFragment = new NewPartyFragment();
+                newPartyDialogFragment.show(getFragmentManager(), "payment");
                 break;
             case R.id.action_clear_data:
-                Household.get(this).clearData();
+                AlertDialog d = new AlertDialog.Builder(this)
+                        .setCancelable(true)
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .setTitle(getString(R.string.clear_data_dialog_title))
+                        .setMessage("Do you really want to clear all purchases, payments, and parties?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                household.clearData();
+                                refreshLists();
+                            }
+                        })
+                        .create();
+                d.show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -323,5 +130,16 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     public void onTabReselected(ActionBar.Tab tab,
                                 FragmentTransaction fragmentTransaction) {
+    }
+
+    @Override
+    public void newTransaction() {
+        refreshLists();
+    }
+
+    public void refreshLists(){
+        for (int f = 0; f < mSectionsPagerAdapter.getCount(); f++){
+            mSectionsPagerAdapter.refreshFragment(f);
+        }
     }
 }

@@ -1,12 +1,17 @@
 package com.burntime.cost_divider;
 
-import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-import java.io.File;
+import com.burntime.cost_divider.JSON.PartyJSONSerializer;
+import com.burntime.cost_divider.JSON.PaymentJSONSerializer;
+import com.burntime.cost_divider.JSON.PurchaseJSONSerializer;
+import com.burntime.cost_divider.Things.AbstractJSONThing;
+import com.burntime.cost_divider.Things.Party;
+import com.burntime.cost_divider.Things.Payment;
+import com.burntime.cost_divider.Things.Purchase;
+
 import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * Created by Colten on 12/3/2014.
@@ -14,9 +19,11 @@ import java.util.Locale;
  * This is based on BNRG's CrimeLab.java
  */
 public class Household {
-    private static final String TAG = "TransList";
+    private static final String TAG = Household.class.getSimpleName();
     private static final String PURCHASES_FN = "purchases.json";
     private static final String PAYMENTS_FN = "payments.json";
+    private static final String PARTIES_FN = "parties.json";
+    private static final double MINIMUM_BALANCE = 0.01;
 
     private ArrayList<Payment> mPayments;
     private ArrayList<Purchase> mPurchases;
@@ -25,6 +32,7 @@ public class Household {
 
     private PaymentJSONSerializer mPaymentSerializer;
     private PurchaseJSONSerializer mPurchaseSerializer;
+    private PartyJSONSerializer mPartySerializer;
 
     private static Household sHousehold;
     private Context mAppContext;
@@ -32,23 +40,28 @@ public class Household {
 
     private Household(Context appContext){
         mAppContext = appContext;
+
         mPayments = new ArrayList<Payment>();
         mPurchases = new ArrayList<Purchase>();
         mParties = new ArrayList<Party>();
 
-        addParties();
-
-        owes = new double[mParties.size()][mParties.size()];
-        // Calculate the sum of all party members
-        for (Party p : mParties){
-            sumOfParties += p.getCount();
-        }
-
-
         mPurchaseSerializer = new PurchaseJSONSerializer(mAppContext, PURCHASES_FN);
         mPaymentSerializer = new PaymentJSONSerializer(mAppContext, PAYMENTS_FN);
+        mPartySerializer = new PartyJSONSerializer(mAppContext, PARTIES_FN);
+
         try {
-            mPayments = mPaymentSerializer.loadTrans();
+            mParties = mPartySerializer.loadParties();
+            owes = new double[mParties.size()][mParties.size()];
+            // Calculate the sum of all party members
+            for (Party p : mParties){
+                sumOfParties += p.getCount();
+            }
+        } catch (Exception e) {
+            mParties = new ArrayList<Party>();
+            Log.e(TAG, "Error loading parties: ", e);
+        }
+        try {
+            mPayments = mPaymentSerializer.loadPayments();
             for(Payment p : mPayments)
             {
                 recalcOwesForPayment(p);
@@ -58,7 +71,7 @@ public class Household {
             Log.e(TAG, "Error loading payments: ", e);
         }
         try {
-            mPurchases = mPurchaseSerializer.loadTrans();
+            mPurchases = mPurchaseSerializer.loadPurchases();
             for(Purchase p : mPurchases)
             {
                 recalcOwesForPurchase(p);
@@ -67,17 +80,6 @@ public class Household {
             mPurchases = new ArrayList<Purchase>();
             Log.e(TAG, "Error loading purchases: ", e);
         }
-
-
-
-    }
-
-    private void addParties() {
-        // Manually add parties
-        mParties = new ArrayList<Party>();
-        mParties.add(new Party("Colten", 1));
-        mParties.add(new Party("Michael", 1));
-        mParties.add(new Party("Roy", 1));
     }
 
     public static Household get(Context c) {
@@ -98,16 +100,20 @@ public class Household {
     public ArrayList<String> getBalances(){
         ArrayList<String> balances = new ArrayList<String>();
         double amtOwed;
-        for (int i = 0; i < mParties.size(); i++)
-        {
-            for (int j = 0; j < mParties.size(); j++)
-            {
-                if (i != j)
-                {
-                    amtOwed = owes[j][i] - owes[i][j];
-                    if (amtOwed > 0.1)
-                    {
-                        balances.add(mParties.get(i).getName() + " owes " + mParties.get(j).getName() + " " + MainActivity.currencyFormatter.format(amtOwed));
+        if(owes != null) {
+            for (int i = 0; i < mParties.size(); i++) {
+                for (int j = 0; j < mParties.size(); j++) {
+                    if (i < j) {
+                        amtOwed = owes[j][i] - owes[i][j];
+                        if (amtOwed > MINIMUM_BALANCE) {
+                            balances.add(mParties.get(i).getName() + " owes " + mParties.get(j).getName() + " " + MainActivity.currencyFormatter.format(amtOwed));
+                        }
+                        else if(amtOwed < -MINIMUM_BALANCE){
+                            balances.add(mParties.get(j).getName() + " owes " + mParties.get(i).getName() + " " + MainActivity.currencyFormatter.format(-amtOwed));
+                        }
+                        else{
+                            balances.add(mParties.get(i).getName() + " and " + mParties.get(j).getName() + " are square.");
+                        }
                     }
                 }
             }
@@ -119,10 +125,31 @@ public class Household {
         return mParties;
     }
 
-    public void addPurchase(Purchase t){
-        recalcOwesForPurchase(t);
-        mPurchases.add(t);
+    public void addParty(Party p){
+        mPurchases.clear();
+        mPayments.clear();
+        owes = null;
+        savePayments();
         savePurchases();
+        mParties.add(p);
+        saveParties();
+        owes = new double[mParties.size()][mParties.size()];
+        sumOfParties = 0;
+        for (Party z : mParties){
+            sumOfParties += z.getCount();
+        }
+    }
+
+    public void addPurchase(Purchase t){
+        mPurchases.add(t);
+        recalcOwesForPurchase(t);
+        savePurchases();
+    }
+
+    public void addPayment(Payment t){
+        mPayments.add(t);
+        recalcOwesForPayment(t);
+        savePayments();
     }
 
     private void recalcOwesForPurchase(Purchase t) {
@@ -156,14 +183,20 @@ public class Household {
         owes[pPaidTo][pPaidFrom] -= t.getAmount();
     }
 
-    public void addPayment(Payment t){
-        mPayments.add(t);
-        savePayments();
+    private boolean saveParties(){
+        try {
+            mPartySerializer.saveParties(mParties);
+            Log.d(TAG, "Parties saved.");
+            return true;
+        } catch (Exception e) {
+            Log.e(TAG, "Error saving parties.");
+            return false;
+        }
     }
 
     private boolean savePurchases(){
         try {
-            mPurchaseSerializer.saveTrans(mPurchases);
+            mPurchaseSerializer.savePurchases(mPurchases);
             Log.d(TAG, "Purchases saved.");
             return true;
         } catch (Exception e) {
@@ -174,7 +207,7 @@ public class Household {
 
     private boolean savePayments(){
         try {
-            mPaymentSerializer.saveTrans(mPayments);
+            mPaymentSerializer.savePayments(mPayments);
             Log.d(TAG, "Payments saved.");
             return true;
         } catch (Exception e) {
@@ -184,11 +217,12 @@ public class Household {
     }
 
     public void clearData() {
+        mParties.clear();
         mPurchases.clear();
         mPayments.clear();
+        owes = null;
         savePayments();
         savePurchases();
-        //File payments = new File(mAppContext.getFilesDir(), PAYMENTS_FN);
-        //payments.delete();
+        saveParties();
     }
 }

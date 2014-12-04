@@ -7,9 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-// import com.burntime.cost_divider.not_needed.MessageAdapter;
+import com.burntime.cost_divider.Things.Payment;
 
 import java.util.List;
+
+// import com.burntime.cost_divider.not_needed.MessageAdapter;
 
 /**
  * Created by Colten on 8/21/2014.
@@ -17,6 +19,7 @@ import java.util.List;
 public class PaymentsFragment extends ListFragment {
 
     protected List<Payment> mPayments;
+    ArrayAdapter<Payment> mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,7 +32,12 @@ public class PaymentsFragment extends ListFragment {
     public void onResume() {
         super.onResume();
         mPayments = Household.get(getActivity()).getPayments();
-        ArrayAdapter<Payment> adapter = new ArrayAdapter<Payment>(getActivity(), android.R.layout.simple_list_item_1, mPayments);
-        setListAdapter(adapter);
+        mAdapter = new ArrayAdapter<Payment>(getActivity(), android.R.layout.simple_list_item_1, mPayments);
+        setListAdapter(mAdapter);
+    }
+
+    public void refresh() {
+        mPayments = Household.get(getActivity()).getPayments();
+        mAdapter.notifyDataSetChanged();
     }
 }

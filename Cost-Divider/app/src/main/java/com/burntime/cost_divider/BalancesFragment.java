@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // import com.burntime.cost_divider.not_needed.MessageAdapter;
 
@@ -18,6 +17,12 @@ import java.util.List;
 public class BalancesFragment extends ListFragment {
 
     protected ArrayList<String> mBalances;
+    ArrayAdapter<String> mAdapter;
+
+    public void refresh(){
+        mBalances = Household.get(getActivity()).getBalances();
+        mAdapter.notifyDataSetChanged();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +35,7 @@ public class BalancesFragment extends ListFragment {
     public void onResume() {
         super.onResume();
         mBalances = Household.get(getActivity()).getBalances();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, mBalances);
-        setListAdapter(adapter);
+        mAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, mBalances);
+        setListAdapter(mAdapter);
     }
 }
