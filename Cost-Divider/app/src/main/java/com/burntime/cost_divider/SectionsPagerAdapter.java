@@ -31,11 +31,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         switch (position){
             case 0:
-                return new InboxFragment();
+                return new PurchasesFragment();
             case 1:
-                return new FriendsFragment();
+                return new PaymentsFragment();
             default:
-                return new InboxFragment();
+                return new PurchasesFragment();
         }
     }
 
@@ -49,9 +49,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Locale l = Locale.getDefault();
         switch (position) {
             case 0:
-                return mContext.getString(R.string.title_section1).toUpperCase(l);
+                return mContext.getString(R.string.title_purchases).toUpperCase(l);
             case 1:
-                return mContext.getString(R.string.title_section2).toUpperCase(l);
+                return mContext.getString(R.string.title_payments).toUpperCase(l);
         }
         return null;
     }

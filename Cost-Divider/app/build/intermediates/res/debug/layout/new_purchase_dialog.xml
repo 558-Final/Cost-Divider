@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</LinearLayout><!-- From: file:/C:/Users/Colten/Dropbox/_SCHOOL/ECE%20558%20-%20Android%20Programming/Final_Project/Cost-Divider/Cost-Divider/app/src/main/res/layout/new_purchase_dialog.xml -->

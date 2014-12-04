@@ -20,7 +20,6 @@
         android:id="@android:id/empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/no_friends"
+        android:text="@string/no_payments_label"
         />
 </RelativeLayout>
-<!-- From: file:/C:/Users/Colten/Dropbox/_SCHOOL/ECE%20558%20-%20Android%20Programming/Final_Project/Cost-Divider/Cost-Divider/app/src/main/res/layout/fragment_friends.xml -->

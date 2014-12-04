@@ -27,7 +27,7 @@ public class Purchase {
     {
     }
 
-    public Purchase(String type, Double amount, String paidBy)//, String desc,String category, String date)
+    public Purchase(Double amount, String paidBy)//, String desc,String category, String date)String type,
     {
         this.type = type;
         //this.date = date;

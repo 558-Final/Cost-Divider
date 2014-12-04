@@ -1,3 +1,4 @@
+/*
 package com.burntime.cost_divider.not_needed;
 
 import android.app.Activity;
@@ -20,8 +21,10 @@ import com.parse.SignUpCallback;
 public class SignUpActivity extends Activity {
 
 
-    /*TODO: Don't need this
-    * */
+    */
+/*TODO: Don't need this
+    * *//*
+
 
 
      protected EditText mUsername;
@@ -101,3 +104,4 @@ public class SignUpActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.burntime.cost_divider.not_needed;
 
 import android.app.AlertDialog;
@@ -29,8 +30,10 @@ import java.util.List;
 
 public class RecipientsActivity extends ListActivity {
 
-    /*TODO: Don't need this
-    * */
+    */
+/*TODO: Don't need this
+    * *//*
+
 
     public static final String TAG = RecipientsActivity.class.getSimpleName();
 
@@ -190,3 +193,4 @@ public class RecipientsActivity extends ListActivity {
         }
     }
 }
+*/

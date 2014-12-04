@@ -16,7 +16,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.burntime.cost_divider.not_needed.ParseConstants;
-import com.burntime.cost_divider.not_needed.RecipientsActivity;
+// import com.burntime.cost_divider.not_needed.RecipientsActivity;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -301,7 +301,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         switch(id){
             case R.id.action_new_purchase:
-                Fragment newPurchaseDialogFragment = new NewPurchaseFragment();
+                DialogFragment newPurchaseDialogFragment = new NewPurchaseFragment();
                 newPurchaseDialogFragment.show(getSupportFragmentManager(), "purchase");
                 break;
             case R.id.action_new_payment:

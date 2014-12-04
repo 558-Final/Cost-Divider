@@ -115,16 +115,6 @@
                 qualifiers=""
                 type="layout" />
             <file
-                name="fragment_friends"
-                path="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Cost-Divider\app\src\main\res\layout\fragment_friends.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="fragment_inbox"
-                path="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Cost-Divider\app\src\main\res\layout\fragment_inbox.xml"
-                qualifiers=""
-                type="layout" />
-            <file
                 name="main"
                 path="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Cost-Divider\app\src\main\res\menu\main.xml"
                 qualifiers=""
@@ -157,6 +147,8 @@
                 <string name="err_title" >Well Shit.
                 </string>
                 <string name="video_size_warning" >The selected video must be less that 10 MB
+                </string>
+                <string name="title_payments" >Payments
                 </string>
                 <string name="logout_label" >Logout
                 </string>
@@ -202,6 +194,8 @@
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
+                <string name="title_purchases" >Purchases
+                </string>
                 <string name="general_error" >Sorry, there was an error!
                 </string>
                 <string name="email_hint" >Email
@@ -221,6 +215,8 @@
                 <string name="error_with_file" >There was an error with this file. Please select another.
                 </string>
                 <string name="hello_blank_fragment" >Hello blank fragment
+                </string>
+                <string name="no_payments_label" >No payments.
                 </string>
                 <string name="error_sending_message" >There was an error sending your message. please try again.
                 </string>
@@ -251,6 +247,21 @@
             <file
                 name="fragment_new_purchase"
                 path="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Cost-Divider\app\src\main\res\layout\fragment_new_purchase.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="new_purchase_dialog"
+                path="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Cost-Divider\app\src\main\res\layout\new_purchase_dialog.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_payments"
+                path="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Cost-Divider\app\src\main\res\layout\fragment_payments.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_purchases"
+                path="C:\Users\Colten\Dropbox\_SCHOOL\ECE 558 - Android Programming\Final_Project\Cost-Divider\Cost-Divider\app\src\main\res\layout\fragment_purchases.xml"
                 qualifiers=""
                 type="layout" />
         </source>

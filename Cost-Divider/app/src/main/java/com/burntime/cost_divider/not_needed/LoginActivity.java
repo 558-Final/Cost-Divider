@@ -1,3 +1,4 @@
+/*
 package com.burntime.cost_divider.not_needed;
 
 import android.app.Activity;
@@ -20,8 +21,10 @@ import com.parse.ParseUser;
 
 public class LoginActivity extends Activity {
 
-    /*TODO: Don't need this
-    * */
+    */
+/*TODO: Don't need this
+    * *//*
+
 
     protected TextView mSignUpTextView;
 
@@ -33,12 +36,12 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        setContentView(R.layout.activity_login);
+        //setContentView(R.layout.activity_login);
 
-        mUsername = (EditText) findViewById(R.id.userNameText);
-        mPassword = (EditText) findViewById(R.id.passwordText);
-        mLoginButton = (Button) findViewById(R.id.loginButton);
-        mSignUpTextView = (TextView) findViewById(R.id.signUpText);
+        //mUsername = (EditText) findViewById(R.id.userNameText);
+        //mPassword = (EditText) findViewById(R.id.passwordText);
+        //mLoginButton = (Button) findViewById(R.id.loginButton);
+        //mSignUpTextView = (TextView) findViewById(R.id.signUpText);
         mSignUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,3 +104,4 @@ public class LoginActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }
+*/

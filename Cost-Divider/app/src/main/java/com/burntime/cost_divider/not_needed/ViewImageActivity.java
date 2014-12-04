@@ -1,3 +1,4 @@
+/*
 package com.burntime.cost_divider.not_needed;
 
 import android.app.Activity;
@@ -14,8 +15,10 @@ import com.squareup.picasso.Picasso;
 public class ViewImageActivity extends Activity {
 
 
-    /*TODO: Don't need this
-    * */
+    */
+/*TODO: Don't need this
+    * *//*
+
 
 
      @Override
@@ -48,3 +51,4 @@ public class ViewImageActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }
+*/

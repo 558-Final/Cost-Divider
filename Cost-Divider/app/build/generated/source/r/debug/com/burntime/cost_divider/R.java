@@ -36,9 +36,10 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int fragment_friends=0x7f030001;
-        public static final int fragment_inbox=0x7f030002;
-        public static final int fragment_new_purchase=0x7f030003;
+        public static final int fragment_new_purchase=0x7f030001;
+        public static final int fragment_payments=0x7f030002;
+        public static final int fragment_purchases=0x7f030003;
+        public static final int new_purchase_dialog=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -65,18 +66,21 @@ public final class R {
         public static final int login_button_label=0x7f060010;
         public static final int logout_label=0x7f060011;
         public static final int no_friends=0x7f060012;
-        public static final int password_hint=0x7f060013;
-        public static final int send=0x7f060014;
-        public static final int sign_up_label=0x7f060015;
-        public static final int title_activity_edit_friends=0x7f060016;
-        public static final int title_activity_login=0x7f060017;
-        public static final int title_activity_recipients=0x7f060018;
-        public static final int title_activity_sign_up=0x7f060019;
-        public static final int title_activity_view_image=0x7f06001a;
-        public static final int title_section1=0x7f06001b;
-        public static final int title_section2=0x7f06001c;
-        public static final int username_hint=0x7f06001d;
-        public static final int video_size_warning=0x7f06001e;
+        public static final int no_payments_label=0x7f060013;
+        public static final int password_hint=0x7f060014;
+        public static final int send=0x7f060015;
+        public static final int sign_up_label=0x7f060016;
+        public static final int title_activity_edit_friends=0x7f060017;
+        public static final int title_activity_login=0x7f060018;
+        public static final int title_activity_recipients=0x7f060019;
+        public static final int title_activity_sign_up=0x7f06001a;
+        public static final int title_activity_view_image=0x7f06001b;
+        public static final int title_payments=0x7f06001c;
+        public static final int title_purchases=0x7f06001d;
+        public static final int title_section1=0x7f06001e;
+        public static final int title_section2=0x7f06001f;
+        public static final int username_hint=0x7f060020;
+        public static final int video_size_warning=0x7f060021;
     }
     public static final class style {
         /**  Customize your theme here. 

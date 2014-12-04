@@ -1,3 +1,4 @@
+/*
 package com.burntime.cost_divider.not_needed;
 
 import android.content.Context;
@@ -13,19 +14,23 @@ import com.parse.ParseObject;
 
 import java.util.List;
 
+*/
 /**
  * Created by Colten on 9/9/2014.
- */
+ *//*
+
 public class MessageAdapter extends ArrayAdapter<ParseObject> {
 
-    /*TODO: Shouldn't need this. We will use simply String array adaptors and won't need anything fancy like this
-    * */
+    */
+/*TODO: Shouldn't need this. We will use simply String array adaptors and won't need anything fancy like this
+    * *//*
+
 
     protected Context mContext;
     protected List<ParseObject> mMessages;
 
     public MessageAdapter(Context context, List<ParseObject> messages) {
-        super(context, R.layout.message_item, messages);
+        // super(context, R.layout.message_item, messages);
         mContext = context;
         mMessages = messages;
     }
@@ -35,11 +40,13 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
         ViewHolder holder;
 
         if(convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.message_item, null);
+            */
+/*convertView = LayoutInflater.from(mContext).inflate(R.layout.message_item, null);
             holder = new ViewHolder();
             holder.iconImageView = (ImageView) convertView.findViewById(R.id.messageIcon);
             holder.nameLabel = (TextView) convertView.findViewById(R.id.senderlabel);
-            convertView.setTag(holder);
+            convertView.setTag(holder);*//*
+
         }
         else{
             holder = (ViewHolder)convertView.getTag();
@@ -62,3 +69,4 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
         TextView nameLabel;
     }
 }
+*/

@@ -40,5 +40,8 @@
     <string name="error_sending_message">There was an error sending your message. please try again.</string>
     <string name="title_activity_view_image">Ribbit</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_payments_label">No payments.</string>
+    <string name="title_purchases">Purchases</string>
+    <string name="title_payments">Payments</string>
 
 </resources>
